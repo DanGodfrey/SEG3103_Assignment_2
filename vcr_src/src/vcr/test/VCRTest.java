@@ -1878,4 +1878,380 @@ public class VCRTest {
 		assertTrue(vcrMngr.getState() instanceof Off);
 	}
 	
+	@Test
+	//SP 1.1 - 1.2
+	public void PlayWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.PLAY));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 2.1 - 2.2
+	public void StopWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.STOP));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 3.1 - 3.2
+	public void RewindWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.REWIND));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 4.1 - 4.2
+	public void FwdWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.FWD));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 5.1 - 5.2
+	public void ReverseWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.REVERSE));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 6.1 - 6.2
+	public void CUEWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.CUE));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 7.1 - 7.2
+	public void PauseWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.PAUSE));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 8.1 - 8.2
+	public void RecordWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.RECORD));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 9.1 - 9.2
+	public void EoTWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.END_OF_TAPE));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 10.1 - 10.2
+	public void SoTWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.START_OF_TAPE));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 11.1 - 11.2
+	public void EjectWhileOff()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.EJECT));
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+	
+	@Test
+	//SP 12.1 - 12.3
+	public void PlayWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	
+		vcrMngr.processEvent(new VCREvent(VCREvent.PLAY));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 12.3 - 13.3
+	public void StopWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		
+		vcrMngr.processEvent(new VCREvent(VCREvent.STOP));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 14.1 - 14.3
+	public void RewindWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		
+		vcrMngr.processEvent(new VCREvent(VCREvent.REWIND));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 15.1 - 15.3
+	public void FwdWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		
+		vcrMngr.processEvent(new VCREvent(VCREvent.FWD));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		
+	}
+	
+	@Test
+	//SP 16.1 - 16.2
+	public void ReverseWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		
+		vcrMngr.processEvent(new VCREvent(VCREvent.REVERSE));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 17.1 - 17.3
+	public void CueWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	
+		vcrMngr.processEvent(new VCREvent(VCREvent.CUE));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		
+	}
+	
+	@Test
+	//SP 18.1 - 18.3
+	public void RecordWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.RECORD));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 19.1 - 19.3
+	public void PauseWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.PAUSE));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 20.1 - 20.3
+	public void EoTWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.END_OF_TAPE));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 21.1 - 21.3
+	public void SoTWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.START_OF_TAPE));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+	}
+	
+	@Test
+	//SP 22.1 - 22.3
+	public void EjectWhileEmpty()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.EJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);	
+	}
+	
+	@Test
+	//SP 23.1 - 23.2
+	public void InjectWhileIdle()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Idle);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Idle);	
+		
+	}
+	
+	@Test
+	//SP 24.1 - 24.2
+	public void InjectWhilePlay()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.PLAY));
+		assertTrue(vcrMngr.getState() instanceof Play);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Play);
+	}
+	
+	@Test
+	//SP 25.1 - 25.2
+	public void InjectWhileRewind()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.REWIND));
+		assertTrue(vcrMngr.getState() instanceof Rewind);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Rewind);
+	}
+	
+	@Test
+	//SP 26.1 - 26.2
+	public void InjectWhileFWD()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.FWD));
+		assertTrue(vcrMngr.getState() instanceof FWD);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof FWD);
+	}
+	
+	@Test
+	//SP 27.1 - 27.2
+	public void InjectWhileReverse()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.REVERSE));
+		assertTrue(vcrMngr.getState() instanceof Reverse);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Reverse);
+	}
+	
+	@Test
+	//SP 28.1 - 28.2
+	public void InjectWhileCue()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.CUE));
+		assertTrue(vcrMngr.getState() instanceof Cue);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Cue);
+	}
+	
+	@Test
+	//SP 29.1 - 29.2
+	public void InjectWhileRecord()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.RECORD));
+		assertTrue(vcrMngr.getState() instanceof Record);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Record);
+	}
+	
+	@Test
+	//SP 26.1 - 26.2
+	public void InjectWhilePause()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Empty);
+		vcrMngr.processEvent(new VCREvent(VCREvent.PAUSE));
+		assertTrue(vcrMngr.getState() instanceof Pause);
+		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
+		assertTrue(vcrMngr.getState() instanceof Pause);
+	}
 }
