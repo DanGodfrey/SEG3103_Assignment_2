@@ -5,4 +5,5 @@ bin/*
 .classpath
 *.class
 *.docx
-.metadata
+.*
+!.gitignore
