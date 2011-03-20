@@ -5,3 +5,4 @@ bin/*
 .classpath
 *.class
 *.docx
+.metadata/*
