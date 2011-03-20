@@ -1,0 +1,7 @@
+bin/*
+*.jar
+.DS_Store
+.project
+.classpath
+*.class
+*.docx

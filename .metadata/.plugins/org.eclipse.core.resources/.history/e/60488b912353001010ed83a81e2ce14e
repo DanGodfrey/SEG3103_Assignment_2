@@ -1,0 +1,18 @@
+package vcr.test;
+
+import org.junit.Test;
+
+import vcr.ui.Console;
+
+
+public class VCRTest {
+	
+	@Test
+	//1.1
+	public void ConsoleConstructor()
+	{
+		Console ui = new Console();
+		
+	}
+
+}

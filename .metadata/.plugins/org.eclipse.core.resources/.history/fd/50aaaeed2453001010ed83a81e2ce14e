@@ -1,0 +1,21 @@
+package vcr.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import vcr.state.Idle;
+import vcr.util.VCRManager;
+
+
+public class VCRTest {
+	
+	@Test
+	//1.1
+	public void ConsoleConstructor()
+	{
+		VCRManager vcrMngr = new VCRManager();
+		assertTrue(vcrMngr.getState() instanceof Off);
+	}
+
+}
