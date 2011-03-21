@@ -65,7 +65,13 @@ public class Off implements VCRState{
 
 
   private VCRState handlePower() {
-    return new Empty(vcr());
+    if (this.vcr_.getTape() != NullDevice.getDefault())
+    {
+    	return new Idle(vcr());
+    }
+    else{
+	  return new Empty(vcr());
+    }
   }
 
   public VCRState handleInject() {

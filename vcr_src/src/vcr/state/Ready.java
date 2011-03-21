@@ -153,7 +153,7 @@ public abstract class Ready implements VCRState {
 
 
   public VCRState handleEndOfTape() {
-    return new Idle(vcr());	
+    return new Rewind(vcr());	
   }
 
   public VCRState handleStartOfTape() {

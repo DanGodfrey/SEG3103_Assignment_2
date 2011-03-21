@@ -24,6 +24,9 @@ public class Cue extends Ready {
     if (type.equals(VCREvent.UNIT_OF_TIME)) {
       nextState = handleUnitOfTime();	
     
+    } else if (type.equals(VCREvent.RECORD)) {    
+      nextState = super.handleNoAction();  	
+        
     } else {
       nextState = super.handle(event);
     }	

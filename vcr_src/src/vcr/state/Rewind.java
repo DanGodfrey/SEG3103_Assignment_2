@@ -29,7 +29,12 @@ public class Rewind extends Ready  {
     } else if (type.equals(VCREvent.REVERSE)) {    
       nextState = super.handleNoAction();  	
         
-    } else {
+    } else if (type.equals(VCREvent.PAUSE)) {    
+      nextState = super.handleNoAction();  	 
+    } else if (type.equals(VCREvent.RECORD)) {    
+      nextState = super.handleNoAction();  	     
+    } 
+    else {
       nextState = super.handle(event);
     }	
       

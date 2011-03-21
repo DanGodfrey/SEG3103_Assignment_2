@@ -1370,6 +1370,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.END_OF_TAPE));
 		assertTrue(vcrMngr.getState() instanceof Rewind);
 		vcrMngr.processEvent(new VCREvent(VCREvent.PAUSE));
+		System.out.println(vcrMngr.getState().getClass().toString());
 		assertTrue(vcrMngr.getState() instanceof Rewind);
 	}
 	
@@ -1517,6 +1518,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.PAUSE));
 		assertTrue(vcrMngr.getState() instanceof Pause);
 		vcrMngr.processEvent(new VCREvent(VCREvent.STOP));
+
 		assertTrue(vcrMngr.getState() instanceof Idle);
 	}
 	
@@ -2152,7 +2154,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.PLAY));
 		assertTrue(vcrMngr.getState() instanceof Play);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
@@ -2168,7 +2170,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.REWIND));
 		assertTrue(vcrMngr.getState() instanceof Rewind);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
@@ -2184,7 +2186,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.FWD));
 		assertTrue(vcrMngr.getState() instanceof FWD);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
@@ -2200,7 +2202,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.REVERSE));
 		assertTrue(vcrMngr.getState() instanceof Reverse);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
@@ -2216,7 +2218,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.CUE));
 		assertTrue(vcrMngr.getState() instanceof Cue);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
@@ -2232,7 +2234,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.RECORD));
 		assertTrue(vcrMngr.getState() instanceof Record);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
@@ -2240,7 +2242,7 @@ public class VCRTest {
 	}
 	
 	@Test
-	//SP 26.1 - 26.2
+	//SP 30.1 - 30.2
 	public void InjectWhilePause()
 	{
 		VCRManager vcrMngr = new VCRManager();
@@ -2248,7 +2250,7 @@ public class VCRTest {
 		vcrMngr.processEvent(new VCREvent(VCREvent.POWER));
 		assertTrue(vcrMngr.getState() instanceof Empty);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));
-		assertTrue(vcrMngr.getState() instanceof Empty);
+		assertTrue(vcrMngr.getState() instanceof Idle);
 		vcrMngr.processEvent(new VCREvent(VCREvent.PAUSE));
 		assertTrue(vcrMngr.getState() instanceof Pause);
 		vcrMngr.processEvent(new VCREvent(VCREvent.INJECT));

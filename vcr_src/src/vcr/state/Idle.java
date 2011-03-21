@@ -17,9 +17,9 @@ public class Idle extends Ready  {
   //~~~~~~~~~~~~~~~~~~~~~  
   public VCRState handle(VCREvent event) { 
     VCRState nextState;
-    String type = event.getType();
+    //String type = event.getType();
     
-    if (type.equals(VCREvent.PAUSE)) {
+   /* if (type.equals(VCREvent.PAUSE)) {
       nextState = handleNoAction();	
 
     } else if (type.equals(VCREvent.REVERSE)) {
@@ -30,8 +30,8 @@ public class Idle extends Ready  {
     
     } else {
       nextState = super.handle(event);
-    }	
-      
+    }	*/
+    nextState = super.handle(event);
   	return nextState; 
   }
 
